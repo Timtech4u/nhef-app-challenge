@@ -1,6 +1,6 @@
 # NHEF Application Challenge
 
-A new Flutter project.
+A Cross Platform Mobile Application for NHEF Application Challenge
 
 ## Application Features
 
@@ -21,11 +21,11 @@ The Application fetches data from an Admin Dashboard.
 Username: `admin`
 Password: `pass1234`
 
-### Dashboard Features
-- Create, Read, Update, Delete data for all Application Features
-- Export data for Application Features
-- Import data for Application Features
-- Create extra Admin accounts
-- Saves assests to AWS
+  ### Dashboard Features
+  - Create, Read, Update, Delete data for all Application Features
+  - Export data for Application Features
+  - Import data for Application Features
+  - Create extra Admin accounts
+  - Saves assests to AWS
 
 **[API Documentation](https://nhef.herokuapp.com/api/docs/)**
