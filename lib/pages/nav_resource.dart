@@ -4,6 +4,7 @@ import 'package:nhef/pages/events.dart';
 import 'package:nhef/pages/jobs.dart';
 import 'package:nhef/pages/library.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:nhef/pages/news.dart';
 import 'package:nhef/pages/scholars.dart';
 import 'package:nhef/pages/testimonial.dart';
 import 'package:nhef/pages/universities.dart';
@@ -173,14 +174,14 @@ class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
                     ),
                     Spacer(),
                     InkWell(
-                      onTap: (){
-                         Navigator.push(
+                      onTap: () {
+                        Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => LibraryResource()),
                         );
                       },
-                                          child: Material(
+                      child: Material(
                         elevation: 0.0,
                         borderRadius: BorderRadius.circular(10.0),
                         child: Container(
@@ -209,10 +210,14 @@ class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
                     ),
                     Spacer(),
                     InkWell(
-                      onTap: (){
-                        
+                      onTap: () {
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => NewsListing()),
+                        );
                       },
-                                          child: Material(
+                      child: Material(
                         elevation: 0.0,
                         borderRadius: BorderRadius.circular(10.0),
                         child: Container(
@@ -247,14 +252,13 @@ class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
                 Row(
                   children: <Widget>[
                     InkWell(
-                      onTap: (){
-                           Navigator.push(
+                      onTap: () {
+                        Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => Scholars()),
+                          MaterialPageRoute(builder: (context) => Scholars()),
                         );
                       },
-                                          child: Material(
+                      child: Material(
                         elevation: 0.0,
                         borderRadius: BorderRadius.circular(10.0),
                         child: Container(
@@ -283,14 +287,14 @@ class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
                     Padding(
                       padding: const EdgeInsets.only(left: 10.0),
                       child: InkWell(
-                        onTap: (){
-                           Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => JobListing()),
-                        );
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => JobListing()),
+                          );
                         },
-                                              child: Material(
+                        child: Material(
                           elevation: 0.0,
                           borderRadius: BorderRadius.circular(10.0),
                           child: Container(
