@@ -52,15 +52,3 @@ Password: `pass1234`
 -  Survey Responses Form
 
 
-<style>
-img[src*='#left'] {
-    float: left;
-}
-img[src*='#right'] {
-    float: right;
-}
-img[src*='#center'] {
-    display: block;
-    margin: auto;
-}
-</style>
