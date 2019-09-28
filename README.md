@@ -4,9 +4,9 @@ A Cross Platform Mobile Application for NHEF Application Challenge
 
 >SCREEN SHOTS
 
-<img width="250" src="./screenshots/home.png">
-<img width="250" src="./screenshots/nav.png">
-<img width="250" src="./screenshots/list.png">
+<img width="250" src="./screenshots/home.png" style="float-left">
+<img width="250" src="./screenshots/nav.png"style="float-left">
+<img width="250" src="./screenshots/list.png"style="float-left">
 
 
 ## Application Features
