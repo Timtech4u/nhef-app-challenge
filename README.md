@@ -4,9 +4,17 @@ A Cross Platform Mobile Application for NHEF Application Challenge
 
 >SCREEN SHOTS
 
-<img width="250" src="./screenshots/home.png" style="float-left">
-<img width="250" src="./screenshots/nav.png"style="float-left">
-<img width="250" src="./screenshots/list.png"style="float-left">
+<div style="text-align: center"><table><tr>
+  <td style="text-align: center">
+  <img src="./screenshots/home.png" width="200"/>
+</td>
+<td style="text-align: center">
+<img src="./screenshots/nav.png" width="200"/>
+</td>
+  <td style="text-align: center">
+<img src="./screenshots/list.png" width="200"/>
+</td>
+</tr></table></div>
 
 
 ## Application Features
@@ -42,3 +50,17 @@ Password: `pass1234`
 -  Scholar Login and Profile
 -  Scholar Social Features 
 -  Survey Responses Form
+
+
+<style>
+img[src*='#left'] {
+    float: left;
+}
+img[src*='#right'] {
+    float: right;
+}
+img[src*='#center'] {
+    display: block;
+    margin: auto;
+}
+</style>
