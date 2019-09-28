@@ -4,7 +4,11 @@ A Cross Platform Mobile Application for NHEF Application Challenge
 
 >SCREEN SHOTS
 
-![Markdown logo](./screenshots/home.png) ![Markdown logo](./screenshots/nav.png)
+<img width="250" src="./screenshots/home.png">
+<img width="250" src="./screenshots/nav.png">
+<img width="250" src="./screenshots/list.png">
+
+
 ## Application Features
 
 The Application contains the following source codes:
