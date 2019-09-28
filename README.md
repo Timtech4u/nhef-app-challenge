@@ -36,3 +36,9 @@ Password: `pass1234`
   - Saves assests to AWS
 
 **[API Documentation](https://nhef.herokuapp.com/api/docs/)**
+
+
+### Application Features still in progress
+-  Scholar Login and Profile
+-  Scholar Social Features 
+-  Survey Responses Form
