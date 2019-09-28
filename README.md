@@ -1,16 +1,31 @@
-# nhef
+# NHEF Application Challenge
 
 A new Flutter project.
 
-## Getting Started
+## Application Features
 
-This project is a starting point for a Flutter application.
+The Application contains the following source codes:
 
-A few resources to get you started if this is your first Flutter project:
+- Community for Scholars and Mentors
+- Events Calendar
+- Program Resource Library
+- Surveys and Testimonials
+- Job and Internship Postings
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Admin Dashboard
+ 
+The Application fetches data from an Admin Dashboard.
+ 
+[Visit Admin Dashboard](https://nhef.herokuapp.com)
+Username: `admin`
+Password: `pass1234`
+
+### Dashboard Features
+- Create, Read, Update, Delete data for all Application Features
+- Export data for Application Features
+- Import data for Application Features
+- Create extra Admin accounts
+- Saves assests to AWS
+
+**[API Documentation](https://nhef.herokuapp.com/api/docs/)**
