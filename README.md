@@ -5,6 +5,7 @@ A Cross Platform Mobile Application for NHEF Application Challenge
 >SCREEN SHOTS
 
 ![Markdown logo](./screenshots/home.png) ![Markdown logo](./screenshots/nav.png)
+
 ## Application Features
 
 The Application contains the following source codes:
@@ -32,3 +33,9 @@ Password: `pass1234`
   - Saves assests to AWS
 
 **[API Documentation](https://nhef.herokuapp.com/api/docs/)**
+
+
+### Application Features still in progress
+-  Scholar Login and Profile
+-  Scholar Social Features 
+-  Survey Responses Form
