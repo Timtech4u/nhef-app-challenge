@@ -52,6 +52,13 @@ class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
                       size: 26,
                     ),
                     Spacer(),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 12.0),
+                      child: Icon(
+                        Icons.search,
+                        color: Colors.white,
+                      ),
+                    )
                   ],
                 ),
                 Padding(
@@ -74,12 +81,14 @@ class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold),
                               ),
-                              Text(
-                                "Access To Unlimited Resources",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: 'montserrat'),
+                              FittedBox(
+                                child: Text(
+                                  "Access To Unlimited Resources",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'montserrat'),
+                                ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
@@ -122,140 +131,196 @@ class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
               ],
             )),
         Padding(
-          padding: const EdgeInsets.only(top: 200.0, left: 20, right: 20),
-          child: Column(
-            children: <Widget>[
-              Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Material(
-                elevation: 0.0,
-                borderRadius: BorderRadius.circular(10.0),
-                child: Container(
-                  padding: EdgeInsets.all(25),
-                  child: Column(
-                    children: <Widget>[
-                      Icon(
-                        Icons.event,
-                        size: 30,
-                        color: Colors.green,
+            padding: const EdgeInsets.only(top: 200.0, left: 10, right: 10),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => EventsDisplay()),
+                        );
+                      },
+                      child: Material(
+                        elevation: 0.0,
+                        borderRadius: BorderRadius.circular(10.0),
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 0.3,
+                          padding: EdgeInsets.all(25),
+                          child: Column(
+                            children: <Widget>[
+                              Icon(
+                                Icons.event,
+                                size: 30,
+                                color: Colors.green,
+                              ),
+                              Spacer(),
+                              Text(
+                                "Events",
+                                style: TextStyle(
+                                    fontFamily: 'montserrat',
+                                    fontWeight: FontWeight.bold),
+                              )
+                            ],
+                          ),
+                          height: 100,
+                        ),
                       ),
-                      Spacer(),
-                      Text("Events")
-                    ],
-                  ),
-                  height: 100,
-                ),
-              ),
-              Spacer(),
-              Material(
-                elevation: 0.0,
-                borderRadius: BorderRadius.circular(10.0),
-                child: Container(
-                  padding: EdgeInsets.all(25),
-                  child: Column(
-                    children: <Widget>[
-                      Icon(
-                        FontAwesomeIcons.bookOpen,
-                        size: 30,
-                        color: Colors.red,
+                    ),
+                    Spacer(),
+                    InkWell(
+                      onTap: (){
+                         Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => LibraryResource()),
+                        );
+                      },
+                                          child: Material(
+                        elevation: 0.0,
+                        borderRadius: BorderRadius.circular(10.0),
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 0.3,
+                          padding: EdgeInsets.all(25),
+                          child: Column(
+                            children: <Widget>[
+                              Icon(
+                                FontAwesomeIcons.bookOpen,
+                                size: 30,
+                                color: Colors.red,
+                              ),
+                              Spacer(),
+                              FittedBox(
+                                  child: Text(
+                                "R-Library",
+                                style: TextStyle(
+                                    fontFamily: 'montserrat',
+                                    fontWeight: FontWeight.bold),
+                              ))
+                            ],
+                          ),
+                          height: 100,
+                        ),
                       ),
-                      Spacer(),
-                      FittedBox(child: Text("R-Library"))
-                    ],
-                  ),
-                  height: 100,
-                ),
-              ),
-              Spacer(),
-              Material(
-                elevation: 0.0,
-                borderRadius: BorderRadius.circular(10.0),
-                child: Container(
-                  padding: EdgeInsets.all(25),
-                  child: Column(
-                    children: <Widget>[
-                      Icon(
-                        FontAwesomeIcons.newspaper,
-                        size: 30,
-                        color: Colors.orange,
+                    ),
+                    Spacer(),
+                    InkWell(
+                      onTap: (){
+                        
+                      },
+                                          child: Material(
+                        elevation: 0.0,
+                        borderRadius: BorderRadius.circular(10.0),
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 0.3,
+                          padding: EdgeInsets.all(25),
+                          child: Column(
+                            children: <Widget>[
+                              Icon(
+                                FontAwesomeIcons.newspaper,
+                                size: 30,
+                                color: Colors.orange,
+                              ),
+                              Spacer(),
+                              FittedBox(
+                                  child: Text(
+                                "News",
+                                style: TextStyle(
+                                    fontFamily: 'montserrat',
+                                    fontWeight: FontWeight.bold),
+                              ))
+                            ],
+                          ),
+                          height: 100,
+                        ),
                       ),
-                      Spacer(),
-                      FittedBox(child: Text("News"))
-                    ],
-                  ),
-                  height: 100,
+                    ),
+                  ],
                 ),
-              ),
-            ],
-          ),
-          SizedBox(height: 20,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Material(
-                elevation: 0.0,
-                borderRadius: BorderRadius.circular(10.0),
-                child: Container(
-                  padding: EdgeInsets.all(25),
-                  child: Column(
-                    children: <Widget>[
-                      Icon(
-                        Icons.event,
-                        size: 30,
-                        color: Colors.green,
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: <Widget>[
+                    InkWell(
+                      onTap: (){
+                           Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Scholars()),
+                        );
+                      },
+                                          child: Material(
+                        elevation: 0.0,
+                        borderRadius: BorderRadius.circular(10.0),
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 0.3,
+                          padding: EdgeInsets.all(25),
+                          child: Column(
+                            children: <Widget>[
+                              Icon(
+                                FontAwesomeIcons.school,
+                                size: 30,
+                                color: Colors.green,
+                              ),
+                              Spacer(),
+                              Text(
+                                "Scholars",
+                                style: TextStyle(
+                                    fontFamily: 'montserrat',
+                                    fontWeight: FontWeight.bold),
+                              )
+                            ],
+                          ),
+                          height: 100,
+                        ),
                       ),
-                      Spacer(),
-                      Text("Events")
-                    ],
-                  ),
-                  height: 100,
-                ),
-              ),
-              Spacer(),
-              Material(
-                elevation: 0.0,
-                borderRadius: BorderRadius.circular(10.0),
-                child: Container(
-                  padding: EdgeInsets.all(25),
-                  child: Column(
-                    children: <Widget>[
-                      Icon(
-                        FontAwesomeIcons.bookOpen,
-                        size: 30,
-                        color: Colors.red,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10.0),
+                      child: InkWell(
+                        onTap: (){
+                           Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => JobListing()),
+                        );
+                        },
+                                              child: Material(
+                          elevation: 0.0,
+                          borderRadius: BorderRadius.circular(10.0),
+                          child: Container(
+                            width: MediaQuery.of(context).size.width * 0.3,
+                            padding: EdgeInsets.all(25),
+                            child: Column(
+                              children: <Widget>[
+                                Icon(
+                                  FontAwesomeIcons.briefcase,
+                                  size: 30,
+                                ),
+                                Spacer(),
+                                FittedBox(
+                                    child: Text(
+                                  "Jobs",
+                                  style: TextStyle(
+                                      fontFamily: 'montserrat',
+                                      fontWeight: FontWeight.bold),
+                                ))
+                              ],
+                            ),
+                            height: 100,
+                          ),
+                        ),
                       ),
-                      Spacer(),
-                      FittedBox(child: Text("R-Library"))
-                    ],
-                  ),
-                  height: 100,
+                    ),
+                  ],
                 ),
-              ),
-              Spacer(),
-              Material(
-                elevation: 0.0,
-                borderRadius: BorderRadius.circular(10.0),
-                child: Container(
-                  padding: EdgeInsets.all(25),
-                  child: Column(
-                    children: <Widget>[
-                      Icon(
-                        Icons.event,
-                        size: 30,
-                      ),
-                      Spacer(),
-                      FittedBox(child: Text("Surveys"))
-                    ],
-                  ),
-                  height: 100,
-                ),
-              ),
-            ],
-          ),
-            ],
-          )
-        ),
+              ],
+            )),
       ],
     );
   }

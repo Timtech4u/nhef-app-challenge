@@ -131,22 +131,8 @@ class ListingScreen extends StatelessWidget {
                                     ],
                                   ),
                                 ),
-                                FittedBox(
-                                  child: Row(
-                                    children: <Widget>[
-                                      Text(
-                                        "DETAIL : ",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        jobs[index].detail.toString(),
-                                        style:
-                                            TextStyle(fontFamily: 'montserrat'),
-                                      ),
-                                    ],
-                                  ),
-                                ),
+                             
+                                
 
                                  FittedBox(
                                   child: Row(
