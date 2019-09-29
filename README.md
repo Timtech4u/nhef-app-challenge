@@ -29,9 +29,9 @@ The Application contains the following source codes:
 
 ## Download App
 
-The the Download App to download the .apk version of the app.
+Click the [DOWNLOAD APP](https://github.com/Timtech4u/nhef-app-challenge/blob/master/NHEF%20app.apk) to download the .apk version of the app.
 
-[Download App](https://github.com/Timtech4u/nhef-app-challenge/blob/master/NHEF%20app.apk)
+[DOWNLOAD APP](https://github.com/Timtech4u/nhef-app-challenge/blob/master/NHEF%20app.apk)
 
 
 ## Admin Dashboard
