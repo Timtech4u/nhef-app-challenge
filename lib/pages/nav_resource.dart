@@ -1,279 +1,117 @@
 import 'package:flutter/material.dart';
 import 'package:nhef/model/resources.dart';
+import 'package:nhef/pages/home.dart';
 import 'package:nhef/pages/events.dart';
 import 'package:nhef/pages/jobs.dart';
 import 'package:nhef/pages/library.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nhef/pages/scholars.dart';
 import 'package:nhef/pages/testimonial.dart';
 import 'package:nhef/pages/universities.dart';
+import 'package:nhef/widgets/icon_badge.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _MainScreenState createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<HomePage> {
+  PageController _pageController;
+  int _page = 2;
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
-      backgroundColor: Color(0xFFf2f2f2),
-      body: ListView(
+      body: PageView(
+        physics: NeverScrollableScrollPhysics(),
+        controller: _pageController,
+        onPageChanged: onPageChanged,
         children: <Widget>[
-          HomeScreenTopPart(),
+          EventsDisplay(),
+          Scholars(),
+          Home(),
+          JobListing(),
+          TestimonialListing(),
         ],
       ),
-    );
-  }
-}
 
-class HomeScreenTopPart extends StatefulWidget {
-  @override
-  _HomeScreenTopPartState createState() => _HomeScreenTopPartState();
-}
-
-class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        ClipPath(
-          clipper: CustomShapeClipper(),
-          child: Container(
-            height: MediaQuery.of(context).size.height * 0.33,
-            color: Colors.green,
+      bottomNavigationBar: Theme(
+        data: Theme.of(context).copyWith(
+          // sets the background color of the `BottomNavigationBar`
+          canvasColor: Colors.green,
+          // sets the active color of the `BottomNavigationBar` if `Brightness` is light
+          primaryColor: Colors.white,
+          textTheme: Theme
+              .of(context)
+              .textTheme
+              .copyWith(caption: TextStyle(color: Colors.grey[300]),
           ),
         ),
-        Padding(
-            padding: EdgeInsets.fromLTRB(18, 30, 0, 0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    Icon(
-                      Icons.menu,
-                      color: Colors.white,
-                      size: 26,
-                    ),
-                    Spacer(),
-                  ],
-                ),
-                Padding(
-                    padding: const EdgeInsets.only(top: 18.0),
-                    child: Row(
-                      children: <Widget>[
-                        CircleAvatar(
-                          radius: 40,
-                          child: Image.asset('assets/images/scholar.png'),
-                          backgroundColor: Colors.white,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text(
-                                "NHEF",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              Text(
-                                "Access To Unlimited Resources",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: 'montserrat'),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Row(
-                                  children: <Widget>[
-                                    CircleAvatar(
-                                      radius: 14,
-                                      backgroundColor: Colors.white,
-                                      child: Icon(
-                                        FontAwesomeIcons.facebookF,
-                                        size: 16,
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      width: 10,
-                                    ),
-                                    CircleAvatar(
-                                      radius: 14,
-                                      backgroundColor: Colors.white,
-                                      child: Icon(FontAwesomeIcons.google,
-                                          size: 16),
-                                    ),
-                                    SizedBox(
-                                      width: 10,
-                                    ),
-                                    CircleAvatar(
-                                      radius: 14,
-                                      backgroundColor: Colors.white,
-                                      child: Icon(FontAwesomeIcons.twitter,
-                                          size: 16),
-                                    ),
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
-                        )
-                      ],
-                    ))
-              ],
-            )),
-        Padding(
-          padding: const EdgeInsets.only(top: 200.0, left: 20, right: 20),
-          child: Column(
-            children: <Widget>[
-              Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Material(
-                elevation: 0.0,
-                borderRadius: BorderRadius.circular(10.0),
-                child: Container(
-                  padding: EdgeInsets.all(25),
-                  child: Column(
-                    children: <Widget>[
-                      Icon(
-                        Icons.event,
-                        size: 30,
-                        color: Colors.green,
-                      ),
-                      Spacer(),
-                      Text("Events")
-                    ],
-                  ),
-                  height: 100,
-                ),
+        child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.event,
               ),
-              Spacer(),
-              Material(
-                elevation: 0.0,
-                borderRadius: BorderRadius.circular(10.0),
-                child: Container(
-                  padding: EdgeInsets.all(25),
-                  child: Column(
-                    children: <Widget>[
-                      Icon(
-                        FontAwesomeIcons.bookOpen,
-                        size: 30,
-                        color: Colors.red,
-                      ),
-                      Spacer(),
-                      FittedBox(child: Text("R-Library"))
-                    ],
-                  ),
-                  height: 100,
-                ),
+              title: Container(height: 0.0),
+            ),
+
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.group,
               ),
-              Spacer(),
-              Material(
-                elevation: 0.0,
-                borderRadius: BorderRadius.circular(10.0),
-                child: Container(
-                  padding: EdgeInsets.all(25),
-                  child: Column(
-                    children: <Widget>[
-                      Icon(
-                        FontAwesomeIcons.newspaper,
-                        size: 30,
-                        color: Colors.orange,
-                      ),
-                      Spacer(),
-                      FittedBox(child: Text("News"))
-                    ],
-                  ),
-                  height: 100,
-                ),
+              title: Container(height: 0.0),
+            ),
+
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
               ),
-            ],
-          ),
-          SizedBox(height: 20,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Material(
-                elevation: 0.0,
-                borderRadius: BorderRadius.circular(10.0),
-                child: Container(
-                  padding: EdgeInsets.all(25),
-                  child: Column(
-                    children: <Widget>[
-                      Icon(
-                        Icons.event,
-                        size: 30,
-                        color: Colors.green,
-                      ),
-                      Spacer(),
-                      Text("Events")
-                    ],
-                  ),
-                  height: 100,
-                ),
+              title: Container(height: 0.0),
+            ),
+
+            BottomNavigationBarItem(
+              icon: IconBadge(
+                icon: Icons.notifications,
               ),
-              Spacer(),
-              Material(
-                elevation: 0.0,
-                borderRadius: BorderRadius.circular(10.0),
-                child: Container(
-                  padding: EdgeInsets.all(25),
-                  child: Column(
-                    children: <Widget>[
-                      Icon(
-                        FontAwesomeIcons.bookOpen,
-                        size: 30,
-                        color: Colors.red,
-                      ),
-                      Spacer(),
-                      FittedBox(child: Text("R-Library"))
-                    ],
-                  ),
-                  height: 100,
-                ),
+              title: Container(height: 0.0),
+            ),
+
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.lightbulb_outline,
               ),
-              Spacer(),
-              Material(
-                elevation: 0.0,
-                borderRadius: BorderRadius.circular(10.0),
-                child: Container(
-                  padding: EdgeInsets.all(25),
-                  child: Column(
-                    children: <Widget>[
-                      Icon(
-                        Icons.event,
-                        size: 30,
-                      ),
-                      Spacer(),
-                      FittedBox(child: Text("Surveys"))
-                    ],
-                  ),
-                  height: 100,
-                ),
-              ),
-            ],
-          ),
-            ],
-          )
+              title: Container(height: 0.0),
+            ),
+          ],
+          onTap: navigationTapped,
+          currentIndex: _page,
         ),
-      ],
+      ),
+
     );
   }
-}
 
-class CustomShapeClipper extends CustomClipper<Path> {
-  @override
-  getClip(Size size) {
-    final Path path = Path();
-    path.lineTo(0.0, size.height);
-
-    path.lineTo(size.width, size.height);
-
-    path.lineTo(size.width, 0.0);
-    path.close();
-    return path;
+  void navigationTapped(int page) {
+    _pageController.jumpToPage(page);
   }
 
   @override
-  bool shouldReclip(CustomClipper oldClipper) => true;
+  void initState() {
+    super.initState();
+    _pageController = PageController(initialPage: 2);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _pageController.dispose();
+  }
+
+  void onPageChanged(int page) {
+    setState(() {
+      this._page = page;
+    });
+  }
 }

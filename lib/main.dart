@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nhef/model/resources.dart';
 import 'package:nhef/pages/nav_resource.dart';
+import 'package:nhef/util/const.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,9 +10,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'NHEF App',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primarySwatch: Colors.green,
-        ),
+        theme: Constants.lightTheme,
+//        theme: ThemeData(
+//          primarySwatch: Colors.green,
+//        ),
         home: SplashScreen());
   }
 }
@@ -41,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
           children: <Widget>[
             HomeScreenTopPart(),
             Padding(
-              padding: const EdgeInsets.only(top: 48.0),
+              padding: const EdgeInsets.only(top: 70.0),
               child: Image.asset('assets/images/loader.gif'),
             ),
             Padding(
@@ -76,7 +77,7 @@ class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 118.0, left: 50, right: 50),
+          padding: const EdgeInsets.only(top: 100.0, left: 50, right: 50),
           child: Center(
             child: Material(
               elevation: 1.0,

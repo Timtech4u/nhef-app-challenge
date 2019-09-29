@@ -1,16 +1,66 @@
-# nhef
+# NHEF Application Challenge
 
-A new Flutter project.
+A Cross Platform Mobile Application for NHEF Application Challenge
 
-## Getting Started
+>SCREEN SHOTS
 
-This project is a starting point for a Flutter application.
+<div style="text-align: center"><table><tr>
+  <td style="text-align: center">
+  <img src="./screenshots/home.png" width="200"/>
+</td>
+<td style="text-align: center">
+<img src="./screenshots/nav.png" width="200"/>
+</td>
+  <td style="text-align: center">
+<img src="./screenshots/list.png" width="200"/>
+</td>
+</tr></table></div>
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Application Features
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The Application contains the following source codes:
+
+- Community for Scholars and Mentors
+- Events Calendar
+- Program Resource Library
+- Surveys and Testimonials
+- Job and Internship Postings
+
+
+## Admin Dashboard
+ 
+The Application fetches data from an Admin Dashboard.
+ 
+[Visit Admin Dashboard](https://nhef.herokuapp.com)
+Username: `admin`
+Password: `pass1234`
+
+  ### Dashboard Features
+  - Create, Read, Update, Delete data for all Application Features
+  - Export data for Application Features
+  - Import data for Application Features
+  - Create extra Admin accounts
+  - Saves assests to AWS
+
+**[API Documentation](https://nhef.herokuapp.com/api/docs/)**
+
+
+### Application Features still in progress
+-  Scholar Login and Profile
+-  Scholar Social Features 
+-  Survey Responses Form
+
+
+<style>
+img[src*='#left'] {
+    float: left;
+}
+img[src*='#right'] {
+    float: right;
+}
+img[src*='#center'] {
+    display: block;
+    margin: auto;
+}
+</style>

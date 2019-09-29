@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nhef/model/resources.dart';
+import 'package:nhef/pages/nav_resource.dart';
 import 'dart:convert';
 import 'dart:async';
 
@@ -32,6 +33,37 @@ class _JobListingState extends State<JobListing> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("OPPORTUNITIES", style: TextStyle(color: Colors.white),),
+        centerTitle: true,
+        backgroundColor: Colors.green,
+        leading: IconButton(
+          icon: Icon(
+            Icons.keyboard_backspace,
+            color: Colors.white,
+          ),
+          onPressed: (){
+            if (Navigator.canPop(context)) {
+              Navigator.pop(context);
+            } else {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => HomePage()),
+              );
+            }
+          },
+        ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.search,
+              color: Colors.white,
+            ),
+            onPressed: (){},
+          ),
+        ],
+      ),
       backgroundColor: Colors.white,
       body: FutureBuilder<List<Opportunity>>(
         future: _fetchJobs(),
@@ -57,120 +89,35 @@ class ListingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0.0,
-      ),
-      body: ListView.builder(
+      body: ListView.separated(
+          padding: EdgeInsets.all(10),
+          separatorBuilder: (BuildContext context, int index) {
+            return Align(
+              alignment: Alignment.centerRight,
+              child: Container(
+                height: 0.5,
+                width: MediaQuery.of(context).size.width / 1.3,
+                child: Divider(),
+              ),
+            );
+          },
+
           itemCount: jobs.length,
           itemBuilder: (BuildContext ctxt, int index) {
             return Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
-              child: Material(
-                  elevation: 2.0,
-                  borderRadius: BorderRadius.circular(10),
-                  child: Padding(
-                    padding: EdgeInsets.all(15),
-                    child: Row(
-                      children: <Widget>[
-                        CircleAvatar(
-                          child: Icon(Icons.list),
-                        ),
-                        Container(
-                          width: MediaQuery.of(context).size.width * 0.7,
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                FittedBox(
-                                  child: Row(
-                                    children: <Widget>[
-                                      Text(
-                                        "TITLE : ",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        jobs[index].title.toString(),
-                                        style:
-                                            TextStyle(fontFamily: 'montserrat'),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                FittedBox(
-                                  child: Row(
-                                    children: <Widget>[
-                                      Text(
-                                        "TYPE: ",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        jobs[index].opportunity.toString(),
-                                        style:
-                                            TextStyle(fontFamily: 'montserrat'),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                FittedBox(
-                                  child: Row(
-                                    children: <Widget>[
-                                      Text(
-                                        "COMPANY : ",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        jobs[index].company.toString(),
-                                        style:
-                                            TextStyle(fontFamily: 'montserrat'),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                FittedBox(
-                                  child: Row(
-                                    children: <Widget>[
-                                      Text(
-                                        "DETAIL : ",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        jobs[index].detail.toString(),
-                                        style:
-                                            TextStyle(fontFamily: 'montserrat'),
-                                      ),
-                                    ],
-                                  ),
-                                ),
+              const EdgeInsets.symmetric(horizontal: 8.0, vertical: 10.0),
+              child: ListTile(
+                leading: CircleAvatar(
+                  child: Icon(Icons.list),
+                  radius: 25,
+                ),
 
-                                 FittedBox(
-                                  child: Row(
-                                    children: <Widget>[
-                                      Text(
-                                        "DATE POSTED : ",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        jobs[index].dateposted.toString(),
-                                        style:
-                                            TextStyle(fontFamily: 'montserrat'),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  )),
+                contentPadding: EdgeInsets.all(0),
+                title: Text(jobs[index].title.toString()),
+                subtitle: Text(jobs[index].opportunity.toString() + "\nFrom " + jobs[index].company.toString()),
+
+              ),
             );
           }),
     );

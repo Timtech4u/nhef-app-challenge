@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nhef/model/resources.dart';
+import 'package:nhef/pages/nav_resource.dart';
 import 'dart:convert';
 import 'dart:async';
 
@@ -32,6 +33,37 @@ class _UniversityListingState extends State<UniversityListing> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("UNIVERSITIES", style: TextStyle(color: Colors.white),),
+        centerTitle: true,
+        backgroundColor: Colors.green,
+        leading: IconButton(
+          icon: Icon(
+            Icons.keyboard_backspace,
+            color: Colors.white,
+          ),
+          onPressed: (){
+            if (Navigator.canPop(context)) {
+              Navigator.pop(context);
+            } else {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => HomePage()),
+              );
+            }
+          },
+        ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.search,
+              color: Colors.white,
+            ),
+            onPressed: (){},
+          ),
+        ],
+      ),
       backgroundColor: Colors.white,
       body: FutureBuilder<List<University>>(
         future: _fetchuniversities(),
@@ -54,75 +86,38 @@ class _UniversityListingState extends State<UniversityListing> {
 class ListingScreen extends StatelessWidget {
   final List<University> universities;
   ListingScreen(this.universities);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0.0,
-      ),
-      body: ListView.builder(
+      body: ListView.separated(
+          padding: EdgeInsets.all(10),
+          separatorBuilder: (BuildContext context, int index) {
+            return Align(
+              alignment: Alignment.centerRight,
+              child: Container(
+                height: 0.5,
+                width: MediaQuery.of(context).size.width / 1.3,
+                child: Divider(),
+              ),
+            );
+          },
+
           itemCount: universities.length,
           itemBuilder: (BuildContext ctxt, int index) {
             return Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
-              child: Material(
-                  elevation: 2.0,
-                  borderRadius: BorderRadius.circular(10),
-                  child: Padding(
-                    padding: EdgeInsets.all(15),
-                    child: Row(
-                      children: <Widget>[
-                        CircleAvatar(
-                          child: Icon(Icons.list),
-                        ),
-                        Container(
-                          width: MediaQuery.of(context).size.width * 0.7,
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                FittedBox(
-                                  child: Row(
-                                    children: <Widget>[
-                                      Text(
-                                        "NAME : ",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        universities[index].name.toString(),
-                                        style:
-                                            TextStyle(fontFamily: 'montserrat'),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                FittedBox(
-                                  child: Row(
-                                    children: <Widget>[
-                                      Text(
-                                        "TYPE: ",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        universities[index].detail.toString(),
-                                        style:
-                                            TextStyle(fontFamily: 'montserrat'),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                               
-                              ],
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  )),
+              const EdgeInsets.symmetric(horizontal: 8.0, vertical: 10.0),
+              child: ListTile(
+                leading: CircleAvatar(
+                  child: Icon(Icons.school),
+                  radius: 25,
+                ),
+
+                contentPadding: EdgeInsets.all(0),
+                title: Text(universities[index].name.toString()),
+                subtitle: Text(universities[index].detail.toString()),
+              ),
             );
           }),
     );
