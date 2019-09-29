@@ -6,13 +6,13 @@ A Cross Platform Mobile Application for NHEF Application Challenge
 
 <div style="text-align: center"><table><tr>
   <td style="text-align: center">
-  <img src="./screenshots/home.png" width="200"/>
+  <img src="./screenshots/splash.jpg" width="200"/>
 </td>
 <td style="text-align: center">
-<img src="./screenshots/nav.png" width="200"/>
+<img src="./screenshots/home.jpg" width="200"/>
 </td>
   <td style="text-align: center">
-<img src="./screenshots/list.png" width="200"/>
+<img src="./screenshots/list2.jpg" width="200"/>
 </td>
 </tr></table></div>
 
