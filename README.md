@@ -27,6 +27,12 @@ The Application contains the following source codes:
 - Surveys and Testimonials
 - Job and Internship Postings
 
+## Download App
+
+The the Download App to download the .apk version of the app.
+
+[Download App](https://github.com/Timtech4u/nhef-app-challenge/blob/master/NHEF%20app.apk)
+
 
 ## Admin Dashboard
  
@@ -41,7 +47,7 @@ Password: `pass1234`
   - Export data for Application Features
   - Import data for Application Features
   - Create extra Admin accounts
-  - Saves assests to AWS
+  - Saves assets to AWS
 
 **[API Documentation](https://nhef.herokuapp.com/api/docs/)**
 
@@ -50,17 +56,5 @@ Password: `pass1234`
 -  Scholar Login and Profile
 -  Scholar Social Features 
 -  Survey Responses Form
+-  Event Calendar implementation
 
-
-<style>
-img[src*='#left'] {
-    float: left;
-}
-img[src*='#right'] {
-    float: right;
-}
-img[src*='#center'] {
-    display: block;
-    margin: auto;
-}
-</style>
