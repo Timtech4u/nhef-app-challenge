@@ -2,7 +2,25 @@
 
 A Cross Platform Mobile Application for NHEF Application Challenge
 
->SCREEN SHOTS
+>SCREEN SHOTS v2
+
+<div style="text-align: center"><table><tr>
+  <td style="text-align: center">
+  <img src="./screenshots/1.jpg" width="200"/>
+</td>
+  <td style="text-align: center">
+  <img src="./screenshots/2.jpg" width="200"/>
+</td>
+<td style="text-align: center">
+<img src="./screenshots/3.jpg" width="200"/>
+</td>
+  <td style="text-align: center">
+<img src="./screenshots/4.jpg" width="200"/>
+</td>
+</tr></table></div>
+
+
+>SCREEN SHOTS v1
 
 <div style="text-align: center"><table><tr>
   <td style="text-align: center">
