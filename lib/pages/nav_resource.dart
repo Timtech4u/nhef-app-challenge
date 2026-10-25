@@ -54,35 +54,35 @@ class _MainScreenState extends State<HomePage> {
               icon: Icon(
                 Icons.event,
               ),
-              title: Container(height: 0.0),
+              label: '',
             ),
 
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.group,
               ),
-              title: Container(height: 0.0),
+              label: '',
             ),
 
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.home,
               ),
-              title: Container(height: 0.0),
+              label: '',
             ),
 
             BottomNavigationBarItem(
               icon: IconBadge(
                 icon: Icons.notifications,
               ),
-              title: Container(height: 0.0),
+              label: '',
             ),
 
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.lightbulb_outline,
               ),
-              title: Container(height: 0.0),
+              label: '',
             ),
           ],
           onTap: navigationTapped,

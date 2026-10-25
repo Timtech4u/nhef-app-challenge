@@ -16,7 +16,7 @@ class _TestimonialListingState extends State<TestimonialListing> {
   final String url = "https://nhef.herokuapp.com/api/v1/testimonial/";
 
   Future<List<Testimonial>> _fetchResources() async {
-    var response = await http.get(url);
+    var response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
       final items = json.decode(response.body).cast<Map<String, dynamic>>();

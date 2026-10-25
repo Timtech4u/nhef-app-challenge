@@ -14,7 +14,7 @@ class _EventsDisplayState extends State<EventsDisplay> {
   final String url = "https://nhef.herokuapp.com/api/v1/event/";
 
   Future<List<Events>> _fetchEvents() async {
-    var response = await http.get(url);
+    var response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
       final items = json.decode(response.body).cast<Map<String, dynamic>>();
