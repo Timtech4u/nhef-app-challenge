@@ -17,16 +17,14 @@ class Constants{
     backgroundColor: lightBG,
     primaryColor: lightPrimary,
     accentColor:  lightAccent,
-    cursorColor: lightAccent,
+    textSelectionTheme: TextSelectionThemeData(cursorColor: lightAccent),
     scaffoldBackgroundColor: lightBG,
     appBarTheme: AppBarTheme(
       elevation: 0,
-      textTheme: TextTheme(
-        title: TextStyle(
-          color: lightBG,
-          fontSize: 18.0,
-          fontWeight: FontWeight.w800,
-        ),
+      titleTextStyle: TextStyle(
+        color: lightBG,
+        fontSize: 18.0,
+        fontWeight: FontWeight.w800,
       ),
     ),
   );
@@ -37,15 +35,13 @@ class Constants{
     primaryColor: darkPrimary,
     accentColor: darkAccent,
     scaffoldBackgroundColor: darkBG,
-    cursorColor: darkAccent,
+    textSelectionTheme: TextSelectionThemeData(cursorColor: darkAccent),
     appBarTheme: AppBarTheme(
       elevation: 0,
-      textTheme: TextTheme(
-        title: TextStyle(
-          color: lightBG,
-          fontSize: 18.0,
-          fontWeight: FontWeight.w800,
-        ),
+      titleTextStyle: TextStyle(
+        color: lightBG,
+        fontSize: 18.0,
+        fontWeight: FontWeight.w800,
       ),
     ),
   );

@@ -15,7 +15,7 @@ class _JobListingState extends State<JobListing> {
   final String url = "https://nhef.herokuapp.com/api/v1/opportunity/";
 
   Future<List<Opportunity>> _fetchJobs() async {
-    var response = await http.get(url);
+    var response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
       final items = json.decode(response.body).cast<Map<String, dynamic>>();
